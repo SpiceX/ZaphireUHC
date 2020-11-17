@@ -315,6 +315,8 @@ abstract class Game
         }
 
         $this->phase = Arena::PHASE_RESTART;
+        $time = ZaphireUHC::getInstance()->getDataProvider()->getGameTimeEvent();
+        ZaphireUHC::getInstance()->getTimeManager()->setNextGameTime($time);
     }
 
     /**

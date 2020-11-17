@@ -1,5 +1,8 @@
 # !-- ZaphireUHC Configuration file
 
+# Waiting time for the next uhc event
+uhc_event_time: "1 hour"
+
 # This allow to create one or more arenas in server
 max_arenas: 1
 

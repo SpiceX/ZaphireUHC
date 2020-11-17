@@ -3,6 +3,7 @@
 namespace zaphire\uhc\entities\types;
 
 use zaphire\uhc\arena\Arena;
+use zaphire\uhc\math\Time;
 use zaphire\uhc\ZaphireUHC;
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
@@ -73,19 +74,24 @@ class EndCrystal extends Entity
             $source->setCancelled(true);
             $player = $source->getDamager();
             if ($player instanceof Player) {
-                if (!ZaphireUHC::getInstance()->getSqliteProvider()->verifyPlayerInDB($player)) {
-                    ZaphireUHC::getInstance()->getSqliteProvider()->addPlayer($player);
-                }
-                if (ZaphireUHC::getInstance()->getJoinGameQueue()->inQueue($player)) {
-                    $player->sendMessage("§c§l» §r§7You are in a queue");
-                    return;
-                }
-                /** @var Arena $arena */
-                $arena = ZaphireUHC::getInstance()->getArenaManager()->getAvailableArena();
-                if ($arena !== null) {
-                    ZaphireUHC::getInstance()->getJoinGameQueue()->joinToQueue($player, $arena);
+                if (ZaphireUHC::getInstance()->getTimeManager()->canJoinEvent()) {
+                    if (!ZaphireUHC::getInstance()->getSqliteProvider()->verifyPlayerInDB($player)) {
+                        ZaphireUHC::getInstance()->getSqliteProvider()->addPlayer($player);
+                    }
+                    if (ZaphireUHC::getInstance()->getJoinGameQueue()->inQueue($player)) {
+                        $player->sendMessage("§c§l» §r§7You are in a queue");
+                        return;
+                    }
+                    /** @var Arena $arena */
+                    $arena = ZaphireUHC::getInstance()->getArenaManager()->getAvailableArena();
+                    if ($arena !== null) {
+                        ZaphireUHC::getInstance()->getJoinGameQueue()->joinToQueue($player, $arena);
+                    } else {
+                        ZaphireUHC::getInstance()->getFormManager()->sendAvailableArenaNotFound($player);
+                    }
                 } else {
-                    ZaphireUHC::getInstance()->getFormManager()->sendAvailableArenaNotFound($player);
+                    $time = ZaphireUHC::getInstance()->getTimeManager()->getNextGameTime() - time();
+                    $player->sendMessage("§cUh, oh. There is not available game.\n§aNext UHC event in: §l" . Time::calculateTime($time));
                 }
                 return;
             }
@@ -107,10 +113,19 @@ class EndCrystal extends Entity
         $availableArenas = (ZaphireUHC::getInstance()->getArenaManager()->getAvailableArena() !== null) ? "§aClick to Join" : "§cRunning Game";
         $playing = ZaphireUHC::getInstance()->getArenaManager()->getTotalPlaying();
         $spectating = ZaphireUHC::getInstance()->getArenaManager()->getTotalSpectating();
-        $this->setNameTag("§l§cZaphire UHC\n§r" . $availableArenas . "\n" .
-            "§fPlaying: §7" . $playing . "\n" .
-            "§fSpectating: §7" . $spectating
-        );
+
+        if (ZaphireUHC::getInstance()->getTimeManager()->canJoinEvent()){
+            $this->setNameTag("§l§cZaphire UHC\n§r" . $availableArenas . "\n" .
+                "§fPlaying: §7" . $playing . "\n" .
+                "§fSpectating: §7" . $spectating
+            );
+        } else {
+            $time = ZaphireUHC::getInstance()->getTimeManager()->getNextGameTime() - time();
+            $this->setNameTag("§l§cZaphire UHC\n§r" . $availableArenas . "\n" .
+                "§fNext UHC Event in: §a" . Time::calculateTime($time)
+            );
+        }
+
         return parent::entityBaseTick($tickDiff);
     }
 }

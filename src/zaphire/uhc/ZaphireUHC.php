@@ -32,6 +32,7 @@ use zaphire\uhc\task\JoinGameQueue;
 use zaphire\uhc\utils\BossBar;
 use zaphire\uhc\utils\CpsCounter;
 use zaphire\uhc\utils\PluginUtils;
+use zaphire\uhc\utils\TimeManager;
 
 class ZaphireUHC extends PluginBase implements Listener
 {
@@ -56,7 +57,8 @@ class ZaphireUHC extends PluginBase implements Listener
     private $sqliteProvider;
     /** @var PluginUtils */
     private $pluginUtils;
-
+    /** @var TimeManager */
+    private $timeManager;
 
     public function onEnable()
     {
@@ -71,6 +73,7 @@ class ZaphireUHC extends PluginBase implements Listener
         $this->cpsCounter = new CpsCounter($this);
         $this->entityManager = new EntityManager($this);
         $this->pluginUtils = new PluginUtils($this);
+        $this->timeManager = new TimeManager($this);
     }
 
     public function onDisable()
@@ -157,5 +160,13 @@ class ZaphireUHC extends PluginBase implements Listener
     public function getPluginUtils(): PluginUtils
     {
         return $this->pluginUtils;
+    }
+
+    /**
+     * @return TimeManager
+     */
+    public function getTimeManager(): TimeManager
+    {
+        return $this->timeManager;
     }
 }

@@ -41,6 +41,10 @@ class YamlDataProvider extends Provider
     private $krakenKey;
     /** @var string|null */
     private $krakenSecret;
+    /**
+     * @var mixed|null
+     */
+    private $gameTimeEvent;
 
     /**
 	 * YamlDataProvider constructor.
@@ -76,6 +80,7 @@ class YamlDataProvider extends Provider
 		$this->discordWebhook = $this->plugin->getConfig()->getNested('discord_connector');
 		$this->krakenKey = $this->plugin->getConfig()->getNested('kraken_key');
 		$this->krakenSecret = $this->plugin->getConfig()->getNested('kraken_secret');
+		$this->gameTimeEvent = $this->plugin->getConfig()->getNested('uhc_event_time', "1 hour");
 	}
 
 	public function getMaxArenas(){
@@ -144,5 +149,13 @@ class YamlDataProvider extends Provider
     public function getKrakenSecret(): ?string
     {
         return $this->krakenSecret;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGameTimeEvent(): string
+    {
+        return $this->gameTimeEvent;
     }
 }

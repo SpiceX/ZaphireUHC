@@ -25,7 +25,7 @@ class AsyncUpload extends AsyncTask
     {
         $this->filePath = $filePath;
         $this->name = $name;
-        $this->kraken = new Kraken("0c3ecbf8a3458d932e86cc34bb5f8c4e", "d86ea5519637b64661819d661462888af3def9ec");
+        $this->kraken = new Kraken();
     }
 
     public function onRun()

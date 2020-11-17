@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d44bd69-e8e1-4ed9-998c-3de748d01734" name="Default Changelist" comment="" />
+    <list default="true" id="7d44bd69-e8e1-4ed9-998c-3de748d01734" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zaphire/uhc/utils/TimeManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zaphire/uhc/ZaphireUHC.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/zaphire/uhc/ZaphireUHC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zaphire/uhc/arena/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/zaphire/uhc/arena/Game.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zaphire/uhc/entities/types/EndCrystal.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/zaphire/uhc/entities/types/EndCrystal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zaphire/uhc/provider/YamlDataProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/zaphire/uhc/provider/YamlDataProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zaphire/uhc/utils/AsyncUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/zaphire/uhc/utils/AsyncUpload.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +22,9 @@
     <execution>
       <phar pharPath="D:\PocketMine-MP\composer.phar" interpreterId="7d549766-6241-4511-af4e-d1b79f2ed9ad" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-PMMP">
     <include_path>
@@ -69,14 +82,19 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jntCWnElOpnOwKdx2enXLXWMvY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -100,6 +118,8 @@
       <workItem from="1604451556773" duration="10180000" />
       <workItem from="1604495251358" duration="12647000" />
       <workItem from="1604540163585" duration="2377000" />
+      <workItem from="1605559680326" duration="1922000" />
+      <workItem from="1605574261847" duration="2871000" />
     </task>
     <servers />
   </component>
@@ -111,14 +131,14 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="439" y="159" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1604496160698" />
-    <state x="487" y="37" key="#com.intellij.ide.util.MemberChooser" timestamp="1604497708275">
+    <state x="487" y="37" key="#com.intellij.ide.util.MemberChooser" timestamp="1605569097176">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="487" y="37" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1604497708275" />
-    <state x="270" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604451754298">
+    <state x="487" y="37" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1605569097176" />
+    <state x="270" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605576329934">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="270" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1604451754298" />
+    <state x="270" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1605576329934" />
     <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604496024989">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -127,17 +147,29 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1604451688876" />
-    <state x="404" y="76" key="NewPhpClassDialog" timestamp="1604504310356">
+    <state x="557" y="271" key="Github.ShareDialog" timestamp="1605559733161">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="404" y="76" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1604504310356" />
+    <state x="557" y="271" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1605559733161" />
+    <state x="493" y="0" key="Github.UntrackedFilesDialog" timestamp="1605559737677">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="493" y="0" key="Github.UntrackedFilesDialog/0.0.1366.738@0.0.1366.738" timestamp="1605559737677" />
+    <state x="404" y="76" key="NewPhpClassDialog" timestamp="1605569074146">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="404" y="76" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1605569074146" />
     <state x="184" y="14" key="SettingsEditor" timestamp="1604451690483">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1604451690483" />
-    <state x="391" y="57" width="583" height="624" key="find.popup" timestamp="1604509073354">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1605559760786">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="391" y="57" width="583" height="624" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1604509073354" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605559760786" />
+    <state x="391" y="57" width="583" height="624" key="find.popup" timestamp="1605577416070">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="391" y="57" width="583" height="624" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1605577416070" />
   </component>
 </project>
